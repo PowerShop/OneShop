@@ -7,17 +7,22 @@ OneShop - ระบบร้านค้าหน้าเดียว
 <code>
 $_config = array();
 
+
 $_config['db_host'] = 'localhost';
+
 $_config['db_database'] = 'mshop';
+
 $_config['db_user'] = 'root';
+
 $_config['db_password'] = '';
+
 
 $_config['mc_host'] = '165.22.254.47';
 $_config['mc_port'] = '19132';
 $_config['mc_password'] = 'ikR/nyMW5p';
 $_config['mc_timeout'] = '300';
 
-//ข้อมูล https://www.tmweasy.com ต้องสมัครสมาชิกที่เว็บนี้ก่อนแล้วเอา id มาใส
+
 $tmapi_user="testmcpe"; // Username
 $tmpapi_assword="Dekdee999"; // รหัสผ่าน
 
