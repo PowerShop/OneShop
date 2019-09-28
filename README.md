@@ -1,5 +1,5 @@
-# OneShop
-__OneShop - ระบบร้านค้าหน้าเดียว__
+# OneShop ระบบร้านค้า MCPE / PC
+
 ---
 การ Config File _config.php
 ```php
