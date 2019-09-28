@@ -1,12 +1,4 @@
-<style>
 @import 'https://fonts.googleapis.com/css?family=Mitr';
-input[type=text] {
-    border-radius: 10px;
-}
-
-input[type=password] {
-    border-radius: 10px;
-}
 
 .font {
     font-family: 'Mitr';
@@ -81,8 +73,6 @@ img.avatar {
 
 .container {
   padding: 16px;
-  color: black;
-  background: rgba(255,255,255,0.3);
 }
 
 span.psw {
@@ -100,13 +90,14 @@ span.psw {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background: rgba(255,255,255,0.8); /* Fallback color */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   padding-top: 60px;
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background: rgba(255,255,255,0.5);
+  background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
@@ -154,56 +145,3 @@ span.psw {
      width: 100%;
   }
 }
-
-.icon-bar {
-  width: 100%; /* Full-width */
-  background-color: #555; /* Dark-grey background */
-  overflow: auto; /* Overflow due to float */
-}
-
-.icon-bar a {
-  float: left; /* Float links side by side */
-  text-align: center; /* Center-align text */
-  width: 20%; /* Equal width (5 icons with 20% width each = 100%) */
-  padding: 12px 0; /* Some top and bottom padding */
-  transition: all 0.3s ease; /* Add transition for hover effects */
-  color: white; /* White text color */
-  font-size: 36px; /* Increased font size */
-}
-
-.icon-bar a:hover {
-  background-color: #000; /* Add a hover color */
-}
-
-.active {
-  background-color: #4CAF50; /* Add an active/current color */
-}
-
-/* css menu */
-div.scrollmenu {
-  background-color: #333;
-  overflow: auto;
-  white-space: nowrap;
-}
-
-div.scrollmenu a {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 14px;
-  text-decoration: none;
-}
-
-div.scrollmenu a:hover {
-  background-color: #777;
-}
-
-.back-to-top {
-    cursor: pointer;
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    display:none;
-}
-
-</style>
