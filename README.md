@@ -4,7 +4,7 @@ OneShop - ระบบร้านค้าหน้าเดียว
 <code>
 $_config = array();
 
-
+<code>
 $_config['db_host'] = 'localhost';
 
 $_config['db_database'] = 'mshop';
@@ -30,6 +30,6 @@ $tmpapi_assword="Dekdee999"; // รหัสผ่าน
 $truewall_email="aaaxcvg@gmail.com"; 
 
 $truewall_phone="0929458830"; 
-
+</code>
 $truepassword="tmpwokiuaj8JIM2Yt5XTzOqwwg3XwVQQJWZYyY6pjcOmaX0b0[tr]"; 
 </code>
