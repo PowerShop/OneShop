@@ -1,7 +1,10 @@
 # OneShop
 OneShop - ระบบร้านค้าหน้าเดียว
 <hr/>
- Config #_sys/_config.php
+
+ 
+ 
+_sys/_config.php
 
 
 <code>
