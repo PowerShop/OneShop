@@ -3,7 +3,7 @@
 ---
 การ Config File _config.php
 ```php
-
+<?php
 $_config = array();
 
 
