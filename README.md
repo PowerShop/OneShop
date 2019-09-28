@@ -1,7 +1,7 @@
 # OneShop
 OneShop - ระบบร้านค้าหน้าเดียว
 
-[php]
+[code]
 $_config = array();
 
 
@@ -30,6 +30,6 @@ $tmpapi_assword="Dekdee999"; // รหัสผ่าน
 $truewall_email="aaaxcvg@gmail.com"; 
 
 $truewall_phone="0929458830"; 
-</code>
+
 $truepassword="tmpwokiuaj8JIM2Yt5XTzOqwwg3XwVQQJWZYyY6pjcOmaX0b0[tr]"; 
-[/php]
+[/code]
