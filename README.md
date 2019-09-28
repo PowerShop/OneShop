@@ -1,7 +1,8 @@
 # OneShop
 OneShop - ระบบร้านค้าหน้าเดียว
 
-[code]
+```php
+
 $_config = array();
 
 
@@ -32,4 +33,5 @@ $truewall_email="aaaxcvg@gmail.com";
 $truewall_phone="0929458830"; 
 
 $truepassword="tmpwokiuaj8JIM2Yt5XTzOqwwg3XwVQQJWZYyY6pjcOmaX0b0[tr]"; 
-[/code]
+
+```
