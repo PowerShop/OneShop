@@ -2,7 +2,7 @@
 OneShop - ระบบร้านค้าหน้าเดียว
 <hr/>
 Config #_sys/_config.php
-<code>
+'
   <?php
 
 $_config = array();
@@ -25,5 +25,5 @@ $tmpapi_assword="Dekdee999"; // รหัสผ่าน
 $truewall_email="aaaxcvg@gmail.com"; // Email ที่ใช้กับ  App Truemoneywallet
 $truewall_phone="0929458830"; // เบอร์โทรที่ไว้รับยอดกับ True money Wallet เป็นเบอร์ที่สมัครคู่กับ Email ก่อนหน้า
 $truepassword="tmpwokiuaj8JIM2Yt5XTzOqwwg3XwVQQJWZYyY6pjcOmaX0b0[tr]"; // รหัสผ่าน ต้องนำรหัสผ่าน True money Wallet ของท่านไปเข้ารหัสความปลอดภัยที่ https://www.tmweasy.com/encode.php ก่อนแล้วนำcodeที่ได้หลังเข้ารหัสมาใส่ตรงนี้ได้เลย  รูปแบบ tmpw..................
+'
 
-</code>
