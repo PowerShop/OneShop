@@ -1,6 +1,7 @@
 # OneShop
 __OneShop - ระบบร้านค้าหน้าเดียว__
-## การ Config File _config.php
+---
+การ Config File _config.php
 ```php
 
 $_config = array();
