@@ -6,6 +6,7 @@ require dirname(__FILE__).'/_user.php';
 require dirname(__FILE__).'/_shop.php';
 require dirname(__FILE__).'/_rcon.php';
 require dirname(__FILE__).'/_backend.php';
+
 /* APIs */
 $api = (object) array(
      'sql' => new PDO('mysql:host='.$_config['db_host'].'; dbname='.$_config['db_database'].';', $_config['db_user'], $_config['db_password']),

@@ -77,8 +77,7 @@ class Rcon {
 
     // send command packet.
     $this->write_packet(Rcon::PACKET_COMMAND, Rcon::SERVERDATA_EXECCOMMAND, $command);
-
-    // get response.
+    //get response.
     $response_packet = $this->read_packet();
     if ($response_packet['id'] == Rcon::PACKET_COMMAND)
     {
@@ -88,8 +87,7 @@ class Rcon {
         return $response_packet['body'];
       }
     }
-
-    return false;
+return false;
   }
 
   private function authorize(){

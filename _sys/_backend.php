@@ -9,7 +9,7 @@ class Backend
     {
         global $api;
         if(isset($_SESSION['admin']) == 'true') {
-         query("INSERT INTO `item` (`id`,`name`,`price`,`amount`,`image`,`command`,`category`) VALUES ('NULL','".$title."','".$price."','".$amo."','".$image."','".$command."','".$category."')");
+         query("INSERT INTO `item` (`id`,`name`,`price`,`amount`,`image`,`command`,`category`) VALUES (NULL,'".$title."','".$price."','".$amo."','".$image."','".$command."','".$category."')");
             echo "<script type='text/javascript'>
             setTimeout(function(){
 				location.href = '?page=backend&additem=true';
@@ -64,7 +64,6 @@ class Backend
                 swal('Success','ดำเนินการสำเร็จ แก้ไขข้อมูลสินค้า ".$item['name']." เรียบร้อย!','success');
                 </script>";
   }
-  
   
 }
 ?>
