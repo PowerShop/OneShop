@@ -44,6 +44,7 @@
             <h4 class="card-title text-center"><i class="fa fa-home" aria-hidden="true"></i> จัดการหลังร้าน</h4>
             <p class="card-text text-center"><i class="fas fa-list-ul"></i> เครื่องมือ : <a href="?page=backend&additem=true">เพิ่มสินค้า</a> |
             <a href="?page=backend&listitem=true">รายการสินค้า</a> |
+  <a href="?page=backend&console=true">Console</a> |
             </p>
         </div>
     </div>
@@ -82,39 +83,58 @@
                     <option class="" value="rank"> ประเภทสินค้า : แรงค์</option>
                     <option class="" value="money"> ประเภทสินค้า : เงิน</option>
                 </select>
-                  <p>
+                <br>
                   <small id="helpId" class="text-muted">เลือกประเภทสินค้า Ex. ยศ</small>
                 </div>
                 <div class="form-group">
                   <label for="c"><i class="fas fa-code"></i> คำสั่ง</label><p>
-                  <small id="helpId" class="text-muted">ใส่คำสั่ง Ex. give {user} diamond 64 </small>
-                  <input type="text" name="c" id="c" class="form-control" placeholder="คำสั่ง...." aria-describedby="helpId" value="#">
+                  <small id="helpId" class="text-muted">ใส่คำสั่ง Ex. give {user} diamond 64 </small><br>
+                  <input type="text" name="cmd[]" class="form-control col-md-10" placeholder="give {user} 276 1"> <button type="button" class="btn btn-success col-md-1 addcmd"><i class="fa fa-plus"></i></button>
                 </div>
-                <div class="form-group" style="text-align: center;">
+                <div class="command_div" id="command"></div>
+                <div class="form-group mt-2" style="text-align: center;">
                   <button type="submit" name="additem" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> เพิ่มสินค้า</button>
                 </div>
                 </form>
         </div>
     </div>
+
+        <script type="text/javascript">
+    $(document).ready(function() {
+    var max_fields_limit = 999; //set limit for maximum input fields
+    var x = 1; //initialize counter for text box
+    $('.addcmd').click(function(e){ //click event on add more fields button having class add_more_button
+        e.preventDefault();
+        if(x < max_fields_limit){ //check conditions
+            x++; //counter increment
+            $('.command_div').append('<div><input type="text" name="cmd[]" class="form-control col-md-10" placeholder="give {user} 276 1"> <a type="button" class="btn btn-danger col-md-1 remove"><i style="color: white;" class="fas fa-times"></a></div>'); //add input field
+        }
+    });  
+    $('.command_div').on("click",".remove", function(e){ //user click on remove text links
+        e.preventDefault(); $(this).parent('div').remove(); x--;
+    })
+});
+</script>
+
                   <?php
 }?>
      <?php if (isset($_GET['listitem'])) {
         ?>
         <div class="card mt-2" style="background: rgba(255,255,255,0.5); border-radius: 30px; color: black;">
             <div class="card-body" style="font-size: 13px">
-                <h4 class="card-title text-center"><i =class="fas fa-list-alt"></i> รายการสินค้า</h4>
+                <h4 class="card-title text-center"><i class="fas fa-list-alt"></i> รายการสินค้า</h4>
 <p class="text-center">
 <small id="helpId" class="text-muted">เเก้ไขรายละเอียดสินค้า คลิ๊กที่ชื่อสินค้า</small>
 </p>
-                <p class="card-text">
-                    <table class="table text-center">
-                        <thead>
-                            <tr style="font-size: 13px">
- <th>ชื่อสินค้า</th>
-                                												<th>Category</th>
-   	<th>Action</th>
-  	</tr>
-  </thead>
+<p class="card-text">
+    <table class="table text-center">
+      <thead>
+          <tr style="font-size: 13px">
+      <th>ชื่อสินค้า</th>
+      <th>Category</th>
+        <th>Action</th>
+        </tr>
+        </thead>
                        
  <?php
 $query = 'SELECT * FROM `item`';
@@ -208,7 +228,44 @@ $query2 = "SELECT * FROM item WHERE id = $id";
 </div>
 </div>
  <?php } ?>
-	
+	<?php if(isset($_GET['console'])) { ?>
+
+<div class="card mt-2 mx-auto" style="border-radius:30px; background: rgba(255,255,255,0.5); color: black;">
+<div class="card-body">
+ <p class="text-center mt-2 mx-auto" style="font-size: 18px"><i class="fas fa-terminal"></i> Console</p>
+<p><?php if(isset($_POST['send'])){
+$cmd = $_POST['command'];
+$api->rcon->connect();
+
+if($api->rcon->send_command($cmd)){
+echo "<script type='text/javascript'>
+swal('Success','ดำเนินการสำเร็จ','success');
+</script>";
+}else{
+echo "<script type='text/javascript'>
+swal('Error','ดำเนินการไม่สำเร็จ','error');
+</script>";
+}
+}
+ ?></p>
+
+</div>
+</div>
+<div class="card mt-2 mx-auto" style="border-radius:30px; background: rgba(255,255,255,0.5); color: black;">
+<div class="card-body">
+<form action="" method="post">
+    <div>
+      <label for="command"><b><i class="fas fa-code"></i> Command</b></label>
+      <input type="text" placeholder="say hi" name="command" id="command" required>
+
+      <button type="submit" name="send" style="border-radius:10px;"><i class="fas fa-sign-in-alt"></i> Send</button>
+    </div>
+
+      </div>
+  </form>
+</div>
+</div>
+<?php } ?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -288,15 +345,57 @@ if(isset($_POST['edititem']))
 	$backend->edititem($id,$name,$price,$amount,$img,$category,$c);
 }
 
-if (isset($_POST['additem']))
+if (isset($_POST["additem"]))
 {
-	$title = $_POST['name'];
+  
+	$name = $_POST['name'];
 	$price = $_POST['price'];
-  $amo = $_POST['amount'];
-	$image = $_POST['img'];
-	$category = $_POST['category'];
-	$command = $_POST['c'];
-	//Add Item
-	$backend->additem($title,$price,$amo,$image,$command,$category);
+  $amount = $_POST['amount'];
+	$img = $_POST['img'];
+	$c = $_POST['cmd'];
+  $category = $_POST['category'];
+  $cmd = array();
+
+  foreach ($_POST['cmd'] as $id => $datacmd) {
+      if ($datacmd != "") {
+          $cmd[] = $datacmd;
+      }
+  }
+  if (count($cmd) == 0) {
+    echo "<script type='text/javascript'>
+    setTimeout(function(){
+location.href = '?page=backend&additem=true';
+}, 2000);
+swal('Error','ดำเนินการไม่สำเร็จ ไม่สามารถเพิ่มสินค้าได้!','error');
+        </script>";
+      exit();
+  }
+  if (empty($name)) {
+    echo "<script type='text/javascript'>
+    setTimeout(function(){
+    location.href = '?page=backend&additem=true';
+    }, 2000);
+            swal('Error','ดำเนินการไม่สำเร็จ กรุณากรอกชื่อสินค้า!','error');
+            </script>";
+      exit();
+  }
+
+  $query = query("INSERT INTO `item` (`name`,`price`,`amount`,`category`,`image`,`command`) VALUES (:name,:price,:amount,:category,:image,:command)",array(":name"=> $_POST['name'],":price" => $_POST['price'],":amount" => $_POST['amount'],":category" => $_POST['category'],":image" => $_POST['img'],":command" => json_encode($cmd,JSON_UNESCAPED_UNICODE)));
+  if ($query){
+  echo "<script type='text/javascript'>
+            setTimeout(function(){
+				location.href = '?page=backend&additem=true';
+				}, 2000);
+				swal('Success','ดำเนินการสำเร็จ เพิ่มสินค้า $name เเล้ว!','success');
+                </script>";
+        } else {
+        	echo "<script type='text/javascript'>
+        setTimeout(function(){
+				location.href = '?page=backend&additem=true';
+				}, 2000);
+                swal('Error','ดำเนินการไม่สำเร็จ ไม่สามารถเพิ่มสินค้า $name ได้!','error');
+                </script>";
+  exit();
+      }
 }
 ?>

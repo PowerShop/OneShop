@@ -186,15 +186,15 @@ function loading(){
 
 
       <label for="transactionid"><b><i class="fas fa-sort-numeric-down"></i> หมายเลขอ้างอิง</b></label>
-      <input type="text" placeholder="หมายเลขอ้างอิง...14หลัก" maxlength="<?php echo $transaction_leng; ?>" name="transactionid" id="transactionid" required>
-<small id="helpId" class="text-muted">กรุณาโอนเงินมาให้พอดีกับราคาสินค้า หากไม่พอใจสินค้าสามารถเปลี่ยนสินค้าที่มีราคาเท่ากันได้</small>
-      <input type="submit" value="✓ แจ้งโอน" class="mx-auto btn btn-success col-md-8" name="send" style="text-align: center; border-radius:10px;" onClick="this.disabled=1;this.value='รอสักครู่กำลังตรวจสอบเลขบัตร...';document.forms[0].submit();loading()">
+      <input type="text" placeholder="หมายเลขอ้างอิง14หลัก" maxlength="<?php echo $transaction_leng; ?>" name="transactionid" id="transactionid" required>
+<small id="helpId" class="text-muted" style="font-size: 15px;">กรุณาโอนเงินมาให้พอดีกับราคาสินค้า หากไม่พอใจสินค้าสามารถเปลี่ยนสินค้าที่มีราคาเท่ากันได้</small>
+      <input type="submit" value="✓ แจ้งโอน" id="loadvip" class="mx-auto btn btn-success col-md-12" name="send" style="text-align: center; border-radius:10px;" onClick="this.disabled=1;this.value='รอสักครู่กำลังตรวจสอบเลขบัตร...';document.forms[0].submit();loading()">
 
     </div>
 
   </form>
 <form action="" method="post" name="cancle">
-<input type="submit" value=" ยกเลิกการทำรายการและกลับสู่หน้าสโตร์" class="mx-auto btn btn-danger col-md-8" name="cancle" style="text-align: center; border-radius:10px;">
+<input type="submit" value=" ยกเลิกการทำรายการและกลับสู่หน้าสโตร์" class="mx-auto btn btn-danger col-md-12" name="cancle" style="text-align: center; border-radius:10px;">
 </form>
 </div>
 </div>

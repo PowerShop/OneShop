@@ -9,6 +9,7 @@ class Backend
     {
         global $api;
         if(isset($_SESSION['admin']) == 'true') {
+                
          query("INSERT INTO `item` (`id`,`name`,`price`,`amount`,`image`,`command`,`category`) VALUES (NULL,'".$title."','".$price."','".$amo."','".$image."','".$command."','".$category."')");
             echo "<script type='text/javascript'>
             setTimeout(function(){
@@ -38,6 +39,7 @@ class Backend
 				}, 2000);
                 swal('Success','ดำเนินการสำเร็จ ลบสินค้า ".$item['name']." เเล้ว!','success');
                 </script>";
+            
                 
         } else {
         	echo "<script type='text/javascript'>

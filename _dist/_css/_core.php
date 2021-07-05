@@ -1,5 +1,6 @@
 <style>
 @import 'https://fonts.googleapis.com/css?family=Mitr';
+
 input[type=text] {
     border-radius: 10px;
 }
@@ -33,7 +34,9 @@ nav {
     width: 50%;
 }
 
-body {font-family: Arial, Helvetica, sans-serif;}
+body {
+    padding: 15px;
+}
 
 /* Full-width input fields */
 input[type=text], input[type=password] {
@@ -206,4 +209,11 @@ div.scrollmenu a:hover {
     display:none;
 }
 
+/* Class Text Colors */
+.text-red {
+  color: red;
+}
+.text-white {
+  color: white;
+}
 </style>

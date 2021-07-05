@@ -14,7 +14,7 @@ $api = (object) array(
     'shop' => new Shop(),
     'rcon' => new Rcon($_config['mc_host'],$_config['mc_port'],$_config['mc_password'],$_config['mc_timeout']),
     'backend' => new Backend(),
-    'status' => json_decode(file_get_contents('http://localhost/_sys/_status/_api.php?host='.$_config['mc_host'].'&port='.$_config['mc_port'].'')),
+    'status' => json_decode(file_get_contents('http://localhost/mshop/_sys/_status/_api.php?host='.$_config['mc_host'].'&port='.$_config['mc_port'].'')),
 );
 $api->sql->exec('set names utf8');
 $api->rcon->send_command('say hi');

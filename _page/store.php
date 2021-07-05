@@ -39,6 +39,12 @@
     </thead>
     <tbody>
       <tr>
+      <p class="text-center mt-2 mx-auto">
+   <div class="block text-center">
+  
+  <p class="top text-center" style="font-size: 30px; color: black;">
+      <i class="fas fa-shopping-bag"></i> สินค้าทั่วไป
+  </p>
 <?php
 $user = $_SESSION['user'];
 $query = "SELECT * FROM `item` WHERE `category` = 'normalitem'";
@@ -47,21 +53,14 @@ if ($result = query($query)) {
     while ($row = $result->fetch()) {
         ?>
 <td>
-        <p class="text-center mt-2 mx-auto">
-   <div class="block text-center">
-  
-  <p class="top text-center" style="font-size: 30px; color: black;">
-      สินค้าทั่วไป
-  </p>
- 
-  <div class="middle">
+  <div class="middle col-md-8">
 
-    <img src="<?php echo $row['image']; ?>" style="width: 150px; height: 150px;" alt="pic" />
+  <img class="center" src="<?php echo $row['image']; ?>" style="width: 150px; height: 150px;" alt="pic" />
   </div>
   <form action="" method="post">
   <div class="bottom">
 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-    <div class="heading"><i class="fas fa-tags"></i> ชื่อสินค้า : <?php echo $row['name']; ?></div>
+    <div class="heading"><i class="fas fa-tags"></i> <?php echo $row['name']; ?></div>
     <input type="hidden" name="name" value="<?php echo $row['name']; ?>">
     <div class="price"><i class="fas fa-boxes"></i> จำนวนสินค้า : <?php echo $row['amount']; ?> ชิ้น</div>
 <input type="hidden" name="amount" value="<?php echo $row['amount']; ?>">
@@ -77,7 +76,9 @@ if ($result = query($query)) {
 </form>
   </p>
        </td>
-<?php }} ?>
+  <?php }} $count = $result->rowCount(); if ($count<1) { echo '<div class="middle">
+    <p class="text-red">ไม่มีสินค้าในขณะนี้!</p>
+  </div>'; } ?>
       </tr>
       
     </tbody>
@@ -97,6 +98,12 @@ if ($result = query($query)) {
     </thead>
     <tbody>
       <tr>
+      <p class="text-center mt-2 mx-auto">
+   <div class="block text-center">
+  
+  <p class="top text-center" style="font-size: 30px; color: black;">
+  <i class="fas fa-crown"></i> แรงค์
+  </p>
 <?php
 $user = $_SESSION['user'];
 $query = "SELECT * FROM `item` WHERE `category` = 'rank'";
@@ -105,20 +112,13 @@ if ($result = query($query)) {
     while ($row = $result->fetch()) {
         ?>
 <td>
-        <p class="text-center mt-2 mx-auto">
-   <div class="block text-center">
-  
-  <p class="top text-center" style="font-size: 30px; color: black;">
-      แรงค์
-  </p>
- 
-  <div class="middle">
-    <img src="<?php echo $row['image']; ?>" style="width: 150px; height: 150px;" alt="pic" />
+  <div class="middle col-md-8">
+    <img class="center" src="<?php echo $row['image']; ?>" style="width: 150px; height: 150px;" alt="pic" />
   </div>
   <form action="" method="post">
   <div class="bottom">
 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-    <div class="heading"><i class="fas fa-tags"></i> ชื่อสินค้า : <?php echo $row['name']; ?></div>
+    <div class="heading"><i class="fas fa-tags"></i> <?php echo $row['name']; ?></div>
     <input type="hidden" name="name" value="<?php echo $row['name']; ?>">
     <div class="price"><i class="fas fa-boxes"></i> จำนวนสินค้า : <?php echo $row['amount']; ?> ชิ้น</div>
 <input type="hidden" name="amount" value="<?php echo $row['amount']; ?>">
@@ -134,7 +134,9 @@ if ($result = query($query)) {
 </form>
   </p>
        </td>
-<?php }} ?>
+       <?php }} $count = $result->rowCount(); if ($count<1) { echo '<div class="middle">
+    <p class="text-red">ไม่มีสินค้าในขณะนี้!</p>
+  </div>'; } ?>
       </tr>
       
     </tbody>
@@ -154,6 +156,12 @@ if ($result = query($query)) {
     </thead>
     <tbody>
       <tr>
+      <p class="text-center mt-2 mx-auto">
+   <div class="block text-center">
+  
+  <p class="top text-center" style="font-size: 30px; color: black;">
+    <i class="fas fa-coins"></i> เงิน
+  </p>
 <?php
 $user = $_SESSION['user'];
 $query = "SELECT * FROM `item` WHERE `category` = 'money'";
@@ -162,20 +170,15 @@ if ($result = query($query)) {
     while ($row = $result->fetch()) {
         ?>
 <td>
-        <p class="text-center mt-2 mx-auto">
-   <div class="block text-center">
-  
-  <p class="top text-center" style="font-size: 30px; color: black;">
-      เงิน 💰
-  </p>
+        
  
-  <div class="middle">
-    <img src="<?php echo $row['image']; ?>" style="width: 150px; height: 150px;" alt="pic" />
+  <div class="middle col-md-8">
+  <img class="center" src="<?php echo $row['image']; ?>" style="width: 150px; height: 150px;" alt="pic" />
   </div>
   <form action="" method="post">
   <div class="bottom">
 <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-    <div class="heading"><i class="fas fa-tags"></i> ชื่อสินค้า : <?php echo $row['name']; ?></div>
+    <div class="heading"><i class="fas fa-tags"></i> <?php echo $row['name']; ?></div>
     <input type="hidden" name="name" value="<?php echo $row['name']; ?>">
     <div class="price"><i class="fas fa-boxes"></i> จำนวนสินค้า : <?php echo $row['amount']; ?> ชิ้น</div>
 <input type="hidden" name="amount" value="<?php echo $row['amount']; ?>">
@@ -190,8 +193,12 @@ if ($result = query($query)) {
 </div>
 </form>
   </p>
-       </td>
-<?php }} ?>
+</td>
+  
+<?php 
+  }} $count = $result->rowCount(); if ($count<1) { echo '<div class="middle">
+    <p class="text-red">ไม่มีสินค้าในขณะนี้!</p>
+  </div>'; }  ?>
       </tr>
       
     </tbody>
@@ -208,7 +215,7 @@ if ($result = query($query)) {
 </script> 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
 </script>
-<script <src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <style>
 
 .block {

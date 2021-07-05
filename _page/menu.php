@@ -59,12 +59,13 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="?page=home"><i class="fas fa-home"></i> Home</a>
   <a href="?page=store"><i class="fas fa-store"></i> Store</a>
+  <a href="?page=redeem"><i class="fas fa-gift"></i> Redeem</a>
   <a href="?page=help"><i class="fas fa-book"></i> คู่มือการใช้งาน</a>
   <a href="?page=logout"><i class="fas fa-sign-out-alt"></i> Logout</a>
 </div>
-<div class="mt-2 text-center"></div>
+<div class="mt-1 text-center"></div>
 <div class="header" id="">
-<span class="mt-3" style="text-align:left; font-size:30px;cursor:pointer" onclick="openNav()">&#9776; เมนู </span>
+<span class="mt-1" style="text-align:left; font-size:30px;cursor:pointer" onclick="openNav()">&#9776; เมนู </span>
 </div>
 <script>
 function openNav() {

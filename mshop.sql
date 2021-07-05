@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 03, 2019 at 02:34 PM
+-- Generation Time: Sep 27, 2019 at 01:36 PM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -43,7 +43,7 @@ CREATE TABLE `item` (
 --
 
 INSERT INTO `item` (`id`, `name`, `price`, `amount`, `category`, `command`, `image`) VALUES
-(2, 'Diamondsss', '1', '64', 'normalitem', 'say hello', ''),
+(2, 'Diamonds', '1', '64', 'normalitem', 'say hello', ''),
 (3, 'Diamond', '100', '64', 'normalitem', 'give {user} diamond 64', ''),
 (4, 'Diamond', '100', '64', 'money', 'give {user} diamond 64', '');
 
@@ -92,7 +92,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`

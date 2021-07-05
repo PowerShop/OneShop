@@ -70,6 +70,7 @@ location.href = '?page=home';
 public function AuthMe($User)
 {
  global $api;
+ session_start();
  ob_start();
  $_SESSION['user'] = $User;
 
@@ -87,5 +88,30 @@ location.href = '?page=home';
 </script>";
 }
 
+public function Redeem($Code)
+  {
+    global $api;
+      $QCode = query('SELECT * FROM `code` WHERE `codes`')->fetch();
+      // $Codes = $Code;
+      $UCode = $QCode['codes'];
+      
+          if ("$Code" == "$UCode") {
+            $Q2Code = query('SELECT * FROM `code` WHERE `codes`=?;', array($Code))->fetch();
+            // $api->rcon->connect();
+            $Command = $Q2Code['command'];
+            $Command = str_replace("{user}", $user, $DataValue);
+            $api->rcon->send_command($Command);
+              echo 
+              '<script type="text/javascript">
+                swal("Success","แลกโค้ด '.$Code.' สำเร็จ","success");
+              </script>';
+                  return true;
+                    exit();
+          } else {
+            echo 
+              '<script type="text/javascript">
+                swal("Error","แลกโค้ด '.$Code.' ไม่สำเร็จ","error");
+              </script>';
+          }
+  }
 }
-
